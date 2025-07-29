@@ -1,25 +1,34 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    font-family: Arial, sans-serif;
+  }
+
   .main-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
-    padding-left: 40px;
-    box-sizing: border-box;
-    background: #f5f5f5;
+    padding: 20px;
   }
 
   .info-box {
-    width: 320px;
+    width: 100%;
+    max-width: 600px;
     min-height: 150px;
     background: #fff;
     border: 2px solid #4CAF50;
     border-radius: 16px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    margin-right: 40px;
-    padding: 24px 20px;
+    margin-bottom: 30px;
+    padding: 20px;
     font-size: 0.95em;
     color: #333;
     display: none;
@@ -40,9 +49,9 @@
 
   .circle-container {
     position: relative;
-    width: 400px;
-    height: 400px;
-    margin: auto;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     background: #ffffff;
     border: 3px solid #ccc;
@@ -51,12 +60,12 @@
 
   .center-circle {
     position: absolute;
-    width: 150px;
-    height: 150px;
+    width: 38%;
+    height: 38%;
     background: #4CAF50;
     color: white;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1em;
     border-radius: 50%;
     top: 50%;
     left: 50%;
@@ -66,12 +75,14 @@
     justify-content: center;
     text-align: center;
     cursor: pointer;
+    padding: 10px;
+    text-wrap: balance;
   }
 
   .option {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 28%;
+    height: 28%;
     border-radius: 50%;
     color: white;
     display: flex;
@@ -79,15 +90,16 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 0.9em;
+    font-size: 0.75em;
     font-weight: bold;
     cursor: pointer;
-    transition: none;
+    padding: 6px;
+    text-wrap: balance;
   }
 
   .option i {
-    font-size: 2em;
-    margin-bottom: 8px;
+    font-size: 1.4em;
+    margin-bottom: 6px;
     transition: transform 0.3s ease;
   }
 
@@ -95,10 +107,19 @@
     transform: scale(1.2);
   }
 
-  .opt1 { background: #f89f32; top: 0; left: 50%; transform: translate(-50%, 0); }
+  .opt1 { background: #f89f32; top: 0%; left: 50%; transform: translate(-50%, 0); }
   .opt2 { background: #29b6f6; top: 50%; left: 100%; transform: translate(-100%, -50%); }
-  .opt3 { background: #ab47bc; bottom: 0; left: 50%; transform: translate(-50%, 0); }
-  .opt4 { background: #66bb6a; top: 50%; left: 0; transform: translate(0, -50%); }
+  .opt3 { background: #ab47bc; bottom: 0%; left: 50%; transform: translate(-50%, 0); }
+  .opt4 { background: #66bb6a; top: 50%; left: 0%; transform: translate(0, -50%); }
+
+  @media screen and (max-width: 500px) {
+    .option {
+      font-size: 0.7em;
+    }
+    .center-circle {
+      font-size: 0.9em;
+    }
+  }
 </style>
 
 <div class="main-container">
